@@ -20,7 +20,7 @@ public abstract class TaskGang<E> implements Runnable {
         return mInput = input;
     }
 
-    protected Executor getmExecutor() {
+    protected Executor getExecutor() {
         return mExecutor;
     }
 
