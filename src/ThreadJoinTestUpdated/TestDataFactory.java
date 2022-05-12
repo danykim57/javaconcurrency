@@ -29,4 +29,21 @@ public class TestDataFactory {
             return null;
         }
     }
+
+    public static<T> Predicate<T> not(Predicate<T> p) {
+        return p.negate();
+    }
+
+    public static List<String> getPhraseList(String filename) {
+        try {
+            return Files
+                    .lines(Paths.get(ClassLoader.getSystemResource
+                            (filename).toURI()))
+                            .filter(((Predicate<String>) String::isEmpty).negate())
+                            .collect(toList());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
