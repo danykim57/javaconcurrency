@@ -28,6 +28,19 @@ public class BarrierTaskGangTest {
             {"xreo", "xfao", "xmiomio", "xlao", "xtiotio", "xsoosoo", "xdoo", "xdoodoo"}
     };
 
+    private final static String[][] mFixedNumberOfInputStrings = {
+            {"xdoodoo", "xreo", "xmiomio", "xfao", "xsoosoo", "xlao", "xtiotio", "xdoo"},
+            {"xdoo", "xreoreo", "xmio", "xfaofao", "xsoo", "xlaolao", "xtio", "xdoodoo"}
+    };
+
+    private final static String[][] mVariableNumberOfInputStrings = {
+            {"xfaofao"},
+            {"xsoo", "xlaolao", "xtio", "xdoodoo"},
+            {"xdoo", "xreoreo"},
+            {"xreoreo", "xdoo"},
+            {"xdoodoo", "xreo", "xmiomio"}
+    };
+
     private static Runnable makeTaskGang(String[] wordList,
                                          TestsToRun choice) {
         switch (choice) {
